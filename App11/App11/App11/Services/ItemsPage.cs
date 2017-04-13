@@ -7,7 +7,6 @@ using App11.Models;
 
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(App11.Services.ItemsPage))]
 namespace App11.Services
 {
     public class ItemsPage : IDataStore<Item>

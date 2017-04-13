@@ -13,13 +13,13 @@ namespace App11.Services
 	public class MainMenu : IDataStore<Item>
 	{
 		bool isInitialized;
-		List<Item> items;
+		List<Item> pages;
 
 		public async Task<bool> AddItemAsync(Item item)
 		{
 			await InitializeAsync();
 
-			items.Add(item);
+			pages.Add(item);
 
 			return await Task.FromResult(true);
 		}
@@ -28,9 +28,9 @@ namespace App11.Services
 		{
 			await InitializeAsync();
 
-			var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-			items.Remove(_item);
-			items.Add(item);
+			var _item = pages.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+			pages.Remove(_item);
+			pages.Add(item);
 
 			return await Task.FromResult(true);
 		}
@@ -39,8 +39,8 @@ namespace App11.Services
 		{
 			await InitializeAsync();
 
-			var _item = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-			items.Remove(_item);
+			var _item = pages.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+			pages.Remove(_item);
 
 			return await Task.FromResult(true);
 		}
@@ -49,14 +49,14 @@ namespace App11.Services
 		{
 			await InitializeAsync();
 
-			return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+			return await Task.FromResult(pages.FirstOrDefault(s => s.Id == id));
 		}
 
 		public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
 		{
 			await InitializeAsync();
 
-			return await Task.FromResult(items);
+			return await Task.FromResult(pages);
 		}
 
 		public Task<bool> PullLatestAsync()
@@ -75,7 +75,7 @@ namespace App11.Services
 			if (isInitialized)
 				return;
 
-			items = new List<Item>();
+			pages = new List<Item>();
 			var _items = new List<Item>
 			{
 				new Item { Id = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
@@ -88,7 +88,7 @@ namespace App11.Services
 
 			foreach (Item item in _items)
 			{
-				items.Add(item);
+				pages.Add(item);
 			}
 
 			isInitialized = true;
