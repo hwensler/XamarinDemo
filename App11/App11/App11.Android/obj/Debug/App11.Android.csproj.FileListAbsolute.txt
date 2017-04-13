@@ -53,3 +53,16 @@ C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.Android\o
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.Android\obj\Debug\uploadflags.txt
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.Android\obj\Debug\App11.Android.dll.mdb
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.Android\bin\Debug\App11.Android.dll.mdb
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Android.csprojResolveAssemblyReference.cache
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.App.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.AboutPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.MenuPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.NewItemPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.ScorePage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.CharacterPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.InventoryPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.MonstersPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.ItemsPage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Droid.Views.BattlePage.xaml.g.cs
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Android.dll
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.Android\obj\Debug\App11.Android.pdb

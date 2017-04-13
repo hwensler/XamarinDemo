@@ -1,7 +1,14 @@
 ﻿
-using App11.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using App11.ViewModels;
+
 
 namespace App11.Views
 {
