@@ -1,4 +1,12 @@
-﻿using App11.Models;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+using App11.Helpers;
+using App11.Models;
+using App11.Views;
+
+using Xamarin.Forms;
 
 namespace App11.ViewModels
 {
