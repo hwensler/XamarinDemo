@@ -4,6 +4,7 @@
              x:Class="App11.Views.ItemsPage"
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
+    
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ItemsListView"

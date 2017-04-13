@@ -17,12 +17,12 @@ namespace App11.Views {
     public partial class MenuPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView ItemsListView;
+        private global::Xamarin.Forms.ListView MenuListView;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MenuPage));
-            ItemsListView = this.FindByName<global::Xamarin.Forms.ListView>("ItemsListView");
+            MenuListView = this.FindByName<global::Xamarin.Forms.ListView>("MenuListView");
         }
     }
 }

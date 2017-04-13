@@ -61,7 +61,7 @@ namespace App11.Views
 			
 
 			// Manually deselect item
-			ItemsListView.SelectedItem = null;
+			MenuListView.SelectedItem = null;
 		}
 
 		async void AddItem_Clicked(object sender, EventArgs e)
