@@ -225,7 +225,6 @@ C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.UWP\obj\x
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\heath\Documents\Visual Studio 2017\Projects\App11\App11\App11.UWP\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.csprojResolveAssemblyReference.cache
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App.g.i.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App.g.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\MainPage.g.i.cs
@@ -236,5 +235,4 @@ C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App.xbf
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\MainPage.xbf
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\Views\ItemDetailPage.xbf
-C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.exe
-C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.pdb
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.csprojResolveAssemblyReference.cache

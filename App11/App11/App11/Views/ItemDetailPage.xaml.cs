@@ -12,9 +12,10 @@ using App11.ViewModels;
 
 namespace App11.Views
 {
-	public partial class ItemDetailPage : ContentPage
-	{
-		ItemDetailViewModel viewModel;
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ItemDetailPage : ContentPage
+    {
+        ItemDetailViewModel viewModel;
 
         // Note - The Xamarin.Forms Previewer requires a default, parameterless constructor to render a page.
         public ItemDetailPage()
@@ -23,10 +24,10 @@ namespace App11.Views
         }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
-			BindingContext = this.viewModel = viewModel;
-		}
-	}
+            BindingContext = this.viewModel = viewModel;
+        }
+    }
 }
