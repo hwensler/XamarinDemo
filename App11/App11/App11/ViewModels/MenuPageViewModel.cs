@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using App11.Helpers;
 using App11.Models;
 using App11.Views;
+using App11.Services;
 
 using Xamarin.Forms;
 
@@ -15,18 +16,14 @@ namespace App11.ViewModels
 		public ObservableRangeCollection<Item> Items { get; set; }
 		public Command LoadItemsCommand { get; set; }
 
-		public MenuPageViewModel()
+        //data will come from Main Menu
+        App11.Services.MainMenu data;
+
+        public MenuPageViewModel()
 		{
 			Title = "Navigate Your Quest";
 			Items = new ObservableRangeCollection<Item>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
-			MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-			{
-				var _item = item as Item;
-				Items.Add(_item);
-				await DataStore.AddItemAsync(_item);
-			});
 		}
 
 		async Task ExecuteLoadItemsCommand()
@@ -39,8 +36,13 @@ namespace App11.ViewModels
 			try
 			{
 				Items.Clear();
-				var items = await DataStore.GetItemsAsync(true);
-				Items.ReplaceRange(items);
+
+                //load the data
+                data = new App11.Services.MainMenu();
+
+                //take the loaded data and put it where we can render it
+                var items = data.pages;
+                Items.ReplaceRange(items);
 			}
 			catch (Exception ex)
 			{

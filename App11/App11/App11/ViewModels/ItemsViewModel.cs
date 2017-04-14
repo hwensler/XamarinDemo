@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using App11.Helpers;
 using App11.Models;
 using App11.Views;
+using App11.Services;
 
 using Xamarin.Forms;
 
@@ -15,18 +16,16 @@ namespace App11.ViewModels
 		public ObservableRangeCollection<Item> Items { get; set; }
 		public Command LoadItemsCommand { get; set; }
 
+        //data will come from ItemsPage
+        App11.Services.ItemsPage data;
+
+
 		public ItemsViewModel()
 		{
 			Title = "Look at all the items!";
 			Items = new ObservableRangeCollection<Item>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-			MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-			{
-				var _item = item as Item;
-				Items.Add(_item);
-				await DataStore.AddItemAsync(_item);
-			});
 		}
 
 		async Task ExecuteLoadItemsCommand()
@@ -39,7 +38,12 @@ namespace App11.ViewModels
 			try
 			{
 				Items.Clear();
-				var items = await DataStore.GetItemsAsync(true);
+
+                //load the data
+                data = new App11.Services.ItemsPage();
+
+                //take the loaded data and put it where we can render it
+                var items = data.items;
 				Items.ReplaceRange(items);
 			}
 			catch (Exception ex)
