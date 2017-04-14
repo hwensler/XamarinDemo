@@ -1,4 +1,8 @@
-﻿namespace App11.Models
+﻿/**
+ * the MenuPage class is used on the Main Menu - or the "Games" tab.
+ * */
+ 
+ namespace App11.Models
 {
     public class MenuPage : BaseDataObject
 	{
@@ -9,6 +13,7 @@
 			set { SetProperty(ref text, value); }
 		}
 
+        //the description isn't really used, but it's here if I want it!
 		string description = string.Empty;
 		public string Description
 		{

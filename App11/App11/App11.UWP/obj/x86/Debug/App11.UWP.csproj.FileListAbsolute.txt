@@ -451,5 +451,4 @@ C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.csprojResolveAssemblyReference.cache
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.MainMenuPage.xaml.g.cs

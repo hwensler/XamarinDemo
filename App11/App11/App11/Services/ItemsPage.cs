@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+ * This is where the items list is populated from... for now.
+ * **/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

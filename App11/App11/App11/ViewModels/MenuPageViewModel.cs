@@ -1,4 +1,8 @@
-﻿using System;
+﻿
+/**
+ * A view model for the main menu.
+ * **/
+ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 

@@ -1,4 +1,7 @@
-﻿using App11.Helpers;
+﻿/**
+ * The view model all other view models inherit from. Contains a title!
+ * **/
+using App11.Helpers;
 using App11.Models;
 using App11.Services;
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿/**
+ * A view model for the items page.
+ * **/
+ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 

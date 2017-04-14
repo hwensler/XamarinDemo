@@ -1,4 +1,9 @@
-﻿using System;
+﻿
+/**
+ * This is where the main menu is populated from
+ * **/
+
+ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

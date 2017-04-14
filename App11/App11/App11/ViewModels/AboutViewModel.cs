@@ -1,4 +1,8 @@
-﻿using System;
+﻿/**
+ * A view model for the about page.
+ * **/
+
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
