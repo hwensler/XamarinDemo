@@ -23,7 +23,7 @@ namespace App11
                 {
                     new NavigationPage(new MainMenuPage())
                     {
-                        Title = "Browse",
+                        Title = "Game",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
                     },
                     new NavigationPage(new AboutPage())

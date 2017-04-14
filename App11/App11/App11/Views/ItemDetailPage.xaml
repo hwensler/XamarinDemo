@@ -4,7 +4,11 @@
              x:Class="App11.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="{Binding Item.Text}" FontSize="Medium"/>
+        <Label Text="{Binding Item.Text}" FontSize="Large"/>
+        <Label Text="Description: " FontSize="Medium" />
         <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <Label Text="Strength: " FontSize ="Medium" />
+        
+        <Label Text="{Binding Item.Strength}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>
