@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App11.Views.MenuPage"
+             x:Class="App11.Views.MainMenuPage"
               Title="{Binding Title}"
              x:Name="BrowseMenuPage">
     <ContentPage.ToolbarItems>
@@ -10,7 +10,7 @@
     <ContentPage.Content>
     <StackLayout>
             <Image Source="dnd.png" />
-            <ListView x:Name="MenuListView"
+            <ListView x:Name="MainMenuListView"
 				ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"

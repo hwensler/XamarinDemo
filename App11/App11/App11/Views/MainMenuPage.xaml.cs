@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace App11.Views
 {
-	public partial class MenuPage : ContentPage
+	public partial class MainMenuPage : ContentPage
 	{
 		MenuPageViewModel viewModel;
 
-		public MenuPage()
+		public MainMenuPage()
 		{
 			InitializeComponent();
 
@@ -20,37 +20,37 @@ namespace App11.Views
 
 		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
 		{
-			var item = args.SelectedItem as Item;
-			if (item == null)
+			var page = args.SelectedItem as App11.Models.MenuPage;
+			if (page == null)
 				return;
 
             //this is where we direct button clicks the the actual pages
-            if(item.Text == "Score")
+            if(page.Text == "Score")
             {
                 await Navigation.PushAsync(new ScorePage());
             }
 
-            else if(item.Text =="Character")
+            else if(page.Text =="Character")
             {
                 await Navigation.PushAsync(new CharacterPage());
 
             }
-            else if(item.Text == "Inventory")
+            else if(page.Text == "Inventory")
             {
                 await Navigation.PushAsync(new InventoryPage());
             }
 
-            else if (item.Text == "Monsters")
+            else if (page.Text == "Monsters")
             {
                 await Navigation.PushAsync(new MonstersPage());
             }
 
-            else if (item.Text == "Items")
+            else if (page.Text == "Items")
             {
                 await Navigation.PushAsync(new ItemsPage());
             }
 
-            else if (item.Text == "Battle")
+            else if (page.Text == "Battle")
             {
                 await Navigation.PushAsync(new BattlePage());
             }
@@ -61,7 +61,7 @@ namespace App11.Views
 			
 
 			// Manually deselect item
-			MenuListView.SelectedItem = null;
+			MainMenuListView.SelectedItem = null;
 		}
 
 		async void AddItem_Clicked(object sender, EventArgs e)

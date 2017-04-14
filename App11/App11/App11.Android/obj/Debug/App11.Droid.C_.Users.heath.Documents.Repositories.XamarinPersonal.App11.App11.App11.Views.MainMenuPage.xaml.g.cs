@@ -14,15 +14,15 @@ namespace App11.Views {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class MenuPage : global::Xamarin.Forms.ContentPage {
+    public partial class MainMenuPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ListView MenuListView;
+        private global::Xamarin.Forms.ListView MainMenuListView;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(MenuPage));
-            MenuListView = this.FindByName<global::Xamarin.Forms.ListView>("MenuListView");
+            this.LoadFromXaml(typeof(MainMenuPage));
+            MainMenuListView = this.FindByName<global::Xamarin.Forms.ListView>("MainMenuListView");
         }
     }
 }

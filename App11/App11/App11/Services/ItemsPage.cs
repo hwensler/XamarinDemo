@@ -18,12 +18,12 @@ namespace App11.Services
             items = new List<Item>();
             var _items = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sword", Description="Check the current score."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Shield", Description="View all current characters."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Shoes", Description="View the current party's inventory."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Bow", Description="See the monsters your party is up against."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Axe", Description="This is where the action is."},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Sword", Description= "A really cool sword. ", Strength = 1},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Shield", Description="A really cool shield. ", Strength = 1},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Shoes", Description="A really cool pair of shoes. ", Strength = 1},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Bow", Description="A realy cool bow.", Strength = 1},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Lance", Description="A really cool lance. ", Strength = 1},
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Axe", Description="A really cool axe. " , Strength = 1},
             };
 
             foreach (Item item in _items)

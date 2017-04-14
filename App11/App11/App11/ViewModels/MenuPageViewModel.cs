@@ -13,7 +13,7 @@ namespace App11.ViewModels
 {
 	public class MenuPageViewModel : BaseViewModel
 	{
-		public ObservableRangeCollection<Item> Items { get; set; }
+		public ObservableRangeCollection<MenuPage> Items { get; set; }
 		public Command LoadItemsCommand { get; set; }
 
         //data will come from Main Menu
@@ -22,7 +22,7 @@ namespace App11.ViewModels
         public MenuPageViewModel()
 		{
 			Title = "Navigate Your Quest";
-			Items = new ObservableRangeCollection<Item>();
+            Items = new ObservableRangeCollection<MenuPage>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 		}
 

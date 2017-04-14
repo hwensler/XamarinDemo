@@ -237,7 +237,6 @@ C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.App.xaml.g.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.AboutPage.xaml.g.cs
-C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.MenuPage.xaml.g.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.NewItemPage.xaml.g.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.ScorePage.xaml.g.cs
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.CharacterPage.xaml.g.cs
@@ -453,3 +452,4 @@ C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.csprojResolveAssemblyReference.cache
+C:\Users\heath\Documents\Repositories\XamarinPersonal\App11\App11\App11.UWP\obj\x86\Debug\App11.UWP.C_.Users.heath.Documents.Repositories.XamarinPersonal.App11.App11.App11.Views.MainMenuPage.xaml.g.cs

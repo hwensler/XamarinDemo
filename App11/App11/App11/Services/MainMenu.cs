@@ -12,22 +12,22 @@ namespace App11.Services
 {
 	public class MainMenu
     {
-		public List<Item> pages { get; set; }
+		public List<MenuPage> pages { get; set; }
 
         public MainMenu()
         {
-            pages = new List<Item>();
-            var _items = new List<Item>
+            pages = new List<MenuPage>();
+            var _items = new List<MenuPage>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Character", Description="View all current characters."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Inventory", Description="View the current party's inventory."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Monsters", Description="See the monsters your party is up against."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Battle", Description="This is where the action is."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Character", Description="View all current characters."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Inventory", Description="View the current party's inventory."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Monsters", Description="See the monsters your party is up against."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
+                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Battle", Description="This is where the action is."},
             };
 
-            foreach (Item item in _items)
+            foreach (MenuPage item in _items)
             {
                 pages.Add(item);
             }
