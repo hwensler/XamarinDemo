@@ -1,0 +1,6 @@
+
+#ignore all packages because they're huge and awful
+
+packages
+bin
+obj
