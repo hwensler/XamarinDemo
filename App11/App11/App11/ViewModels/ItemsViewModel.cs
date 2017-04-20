@@ -20,7 +20,7 @@ namespace App11.ViewModels
 		public Command LoadItemsCommand { get; set; }
 
         //data will come from ItemsPage
-        App11.Services.ItemsPage data;
+        App11.Services.ItemsData data;
 
 
 		public ItemsViewModel()
@@ -43,7 +43,7 @@ namespace App11.ViewModels
 				Items.Clear();
 
                 //load the data
-                data = new App11.Services.ItemsPage();
+                data = new App11.Services.ItemsData();
 
                 //take the loaded data and put it where we can render it
                 var items = data.items;

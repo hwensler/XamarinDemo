@@ -13,11 +13,11 @@ using Xamarin.Forms;
 
 namespace App11.Services
 {
-    public class ItemsPage
+    public class ItemsData
     {
         public List<Item> items { get; set; }
 
-        public ItemsPage()
+        public ItemsData()
         {
             items = new List<Item>();
             var _items = new List<Item>
