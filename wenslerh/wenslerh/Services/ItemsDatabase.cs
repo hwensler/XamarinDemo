@@ -17,7 +17,7 @@ namespace wenslerh
     {
         readonly SQLiteAsyncConnection database;
 
-        public ItemDatabase(string dbPath)
+        public ItemsDatabase(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Item>().Wait();
