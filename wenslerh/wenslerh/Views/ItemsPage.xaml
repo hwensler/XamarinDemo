@@ -2,34 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wenslerh.Views.ItemsPage"
-              Title="{Binding Title}"
+              Title="Items Page"
              x:Name="BrowseItemsPage">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create" Clicked="OnItemAdded" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ItemsListView"
-				ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
-				ItemSelected="OnItemSelected">
+            <Image Source="dnd.png" />
+            <ListView x:Name="listview" Margin="20" ItemSelected="OnListItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Text}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemTextStyle}"
-                       FontSize="16"/>
-
-                                <!-- If you ever want descriptions to display on the items page, bring this 2 life
-                  <Label Text="{Binding Description}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemDetailTextStyle}"
-                       FontSize="13"/>-->
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" LineBreakMode="NoWrap"
+                                           FontSize="15" />
+                                <!-- If you ever want descriptions to display on the items page, brin this 2 life
+                                    <Label Text="{Binding Description}"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13"/>-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

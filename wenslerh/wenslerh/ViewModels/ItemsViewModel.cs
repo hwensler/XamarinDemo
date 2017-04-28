@@ -1,68 +1,85 @@
 ﻿/**
  * A view model for the items page.
  * **/
-using System;
+ using System;
 using System.Diagnostics;
-using System.Threading.Tasks;
-
-using wenslerh.Helpers;
-using wenslerh.Models;
-using wenslerh.Views;
-using wenslerh.Services;
-
 using Xamarin.Forms;
+using wenslerh.Views;
+using wenslerh.Models;
+using wenslerh;
 
-namespace wenslerh.ViewModels
+namespace App11
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ItemsViewModel : ContentPage
     {
-        public ObservableRangeCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-
-        //data will come from ItemsPage
-        wenslerh.Services.ItemsDatabase AllItems;
-
+        ListView listView;
 
         public ItemsViewModel()
         {
-            Title = "Look at all the items!";
-            Items = new ObservableRangeCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            Title = "Items Page";
 
-        }
-
-        async Task ExecuteLoadItemsCommand()
-        {
-            if (IsBusy)
-                return;
-
-            IsBusy = true;
-
-            try
+            var toolbarItem = new ToolbarItem
             {
-                Items.Clear();
+                Text = "Create"
+            };
 
-                //load the data
-                AllItems = new wenslerh.Services.ItemsDatabase();
-
-                //take the loaded data and put it where we can render it
-                var items = AllItems.items;
-                Items.ReplaceRange(items);
-            }
-            catch (Exception ex)
+            toolbarItem.Clicked += async (sender, e) =>
             {
-                Debug.WriteLine(ex);
-                MessagingCenter.Send(new MessagingCenterAlert
+                await Navigation.PushAsync(new ItemDetailPage
                 {
-                    Title = "Error",
-                    Message = "Unable to load items.",
-                    Cancel = "OK"
-                }, "message");
-            }
-            finally
+                    BindingContext = new Item()
+                });
+            };
+
+            ToolbarItems.Add(toolbarItem);
+
+            listView = new ListView
             {
-                IsBusy = false;
-            }
+                Margin = new Thickness(20),
+                ItemTemplate = new DataTemplate(() =>
+                {
+                    var name = new Label
+                    {
+                        VerticalTextAlignment = TextAlignment.Center,
+                        HorizontalOptions = LayoutOptions.StartAndExpand
+                    };
+                    name.SetBinding(Label.TextProperty, "Name");
+
+                    var strength = new Label
+                    {
+                        VerticalTextAlignment = TextAlignment.Center,
+                        HorizontalOptions = LayoutOptions.StartAndExpand
+                    };
+                    strength.SetBinding(Label.TextProperty, "Strength");
+
+
+                    var stackLayout = new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                        Children = { name, strength }
+                    };
+
+                    return new ViewCell { View = stackLayout };
+                })
+            };
+
+
+            listView.ItemSelected += async (sender, e) =>
+            {
+                ((App)App.Current).ResumeAtItemId = (e.SelectedItem as Item).ID;
+                Debug.WriteLine("setting ResumeAtItemId = " + (e.SelectedItem as Item).ID);
+
+                await Navigation.PushAsync(new ItemDetailPage
+                {
+                    BindingContext = e.SelectedItem as Item
+                });
+            };
+
+            Content = listView;
+
         }
     }
 }
+
+

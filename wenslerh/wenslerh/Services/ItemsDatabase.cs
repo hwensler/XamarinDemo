@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 using SQLite;
 using wenslerh.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace wenslerh
 {
@@ -39,7 +37,7 @@ namespace wenslerh
                     new Item {ID = 6, Name  = "Axe", Description="A really cool axe. " , Strength = 1},
                 };
 
-                foreach (Item item in _items)
+                foreach (Item item in AllItems)
                 {
                     await database.InsertAsync(item);
                 }

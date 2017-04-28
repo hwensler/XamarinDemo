@@ -14,10 +14,11 @@ namespace wenslerh.Views
 		{
 			InitializeComponent();
 
-			Item = new Item
-			{
-				Text = "Item name",
-				Description = "This is a nice description"
+            Item = new Item
+            {
+                Name = "Item name",
+                Description = "This is a nice description",
+                Strength= 0
 			};
 
 			BindingContext = this;

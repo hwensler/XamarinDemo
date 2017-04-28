@@ -6,17 +6,17 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace wenslerh
 {
-	public partial class App : Application
-	{
+    public partial class App : Application
+    {
         public App()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
-			SetMainPage();
-		}
+            SetMainPage();
+        }
 
-		public static void SetMainPage()
-		{
+        public static void SetMainPage()
+        {
             Current.MainPage = new TabbedPage
             {
                 Children =
@@ -34,5 +34,21 @@ namespace wenslerh
                 }
             };
         }
-	}
+
+        static ItemsDatabase database;
+
+        public static ItemsDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ItemsDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("ItemSQLite.db3"));
+                }
+                return database;
+            }
+        }
+
+        public int ResumeAtItemId { get; set; }
+    }
 }

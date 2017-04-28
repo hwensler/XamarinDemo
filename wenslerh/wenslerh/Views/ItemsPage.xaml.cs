@@ -1,47 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wenslerh.ViewModels;
-using wenslerh.Models;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using System.Diagnostics;
+using wenslerh.Models;
+using System.Runtime.CompilerServices;
+using wenslerh.ViewModels;
 
 namespace wenslerh.Views
 {
-
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel viewModel;
-
         public ItemsPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new ItemsViewModel();
         }
 
-        //if clicked, go to the item detail page
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
-
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-            // Manually deselect item
-            ItemsListView.SelectedItem = null;
-        }
-
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
+            //reset the resume id 
+            ((App)App.Current).ResumeAtItemId = -1;
+
+            //if the database is empty, fill it!!!
+            await App.Database.Initialize();
+
+            listview.ItemsSource = await App.Database.GetItemsAsync();
+
+        }
+
+        async void OnItemAdded(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemDetailPage
+            {
+                BindingContext = new Item()
+            });
+        }
+
+        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((App)App.Current).ResumeAtItemId = (e.SelectedItem as Item).ID;
+            Debug.WriteLine("setting ResumeAtItemId = " + (e.SelectedItem as Item).ID);
+
+            await Navigation.PushAsync(new ItemDetailPage
+            {
+                BindingContext = e.SelectedItem as Item
+            });
         }
     }
 }
