@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wenslerh.Views.ItemsPage"
+             x:Class="wenslerh.Views.MainMenuPage"
               Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
-
+             x:Name="BrowseMenuPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Item" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ItemsListView"
+            <Image Source="dnd.png" />
+            <ListView x:Name="MainMenuListView"
 				ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"

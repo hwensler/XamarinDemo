@@ -1,46 +1,48 @@
 ﻿using System;
-
-using wenslerh.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using wenslerh.ViewModels;
+using wenslerh.Models;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace wenslerh.Views
 {
-	public partial class ItemsPage : ContentPage
-	{
-		ItemsViewModel viewModel;
 
-		public ItemsPage()
-		{
-			InitializeComponent();
+    public partial class ItemsPage : ContentPage
+    {
+        ItemsViewModel viewModel;
 
-			BindingContext = viewModel = new ItemsViewModel();
-		}
+        public ItemsPage()
+        {
+            InitializeComponent();
 
-		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-		{
-			var item = args.SelectedItem as Item;
-			if (item == null)
-				return;
+            BindingContext = viewModel = new ItemsViewModel();
+        }
 
-			await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+        //if clicked, go to the item detail page
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            var item = args.SelectedItem as Item;
+            if (item == null)
+                return;
 
-			// Manually deselect item
-			ItemsListView.SelectedItem = null;
-		}
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
-		async void AddItem_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new NewItemPage());
-		}
+            // Manually deselect item
+            ItemsListView.SelectedItem = null;
+        }
 
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-			if (viewModel.Items.Count == 0)
-				viewModel.LoadItemsCommand.Execute(null);
-		}
-	}
+            if (viewModel.Items.Count == 0)
+                viewModel.LoadItemsCommand.Execute(null);
+        }
+    }
 }
+

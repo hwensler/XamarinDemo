@@ -1,5 +1,6 @@
-﻿/**
- * A view model for the items page.
+﻿
+/**
+ * A view model for the main menu.
  * **/
 using System;
 using System.Diagnostics;
@@ -14,21 +15,19 @@ using Xamarin.Forms;
 
 namespace wenslerh.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class MenuPageViewModel : BaseViewModel
     {
-        public ObservableRangeCollection<Item> Items { get; set; }
+        public ObservableRangeCollection<MenuPage> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        //data will come from ItemsPage
-        App11.Services.ItemsPage data;
+        //data will come from Main Menu
+        wenslerh.Services.MainMenu data;
 
-
-        public ItemsViewModel()
+        public MenuPageViewModel()
         {
-            Title = "Look at all the items!";
-            Items = new ObservableRangeCollection<Item>();
+            Title = "Navigate Your Quest";
+            Items = new ObservableRangeCollection<MenuPage>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -43,10 +42,10 @@ namespace wenslerh.ViewModels
                 Items.Clear();
 
                 //load the data
-                data = new App11.Services.ItemsPage();
+                data = new wenslerh.Services.MainMenu();
 
                 //take the loaded data and put it where we can render it
-                var items = data.items;
+                var items = data.pages;
                 Items.ReplaceRange(items);
             }
             catch (Exception ex)
