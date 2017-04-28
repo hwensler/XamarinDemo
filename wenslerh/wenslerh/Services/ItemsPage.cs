@@ -11,7 +11,7 @@ using wenslerh.Models;
 
 using Xamarin.Forms;
 
-namespace App11.Services
+namespace wenslerh.Services
 {
     public class ItemsPage
     {
