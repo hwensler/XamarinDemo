@@ -2,7 +2,7 @@
 {
     public class Item : BaseDataObject
 	{
-        int id { get; set; }
+        public int id { get; set; }
 
 		string name = string.Empty;
 		public string Name

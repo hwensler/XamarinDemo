@@ -14,7 +14,9 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		wenslerh\wenslerh\wenslerh.projitems*{15db0b68-d291-43ac-a810-2c8e3ca486c1}*SharedItemsImports = 13
+		wenslerh\wenslerh\wenslerh.projitems*{5ccc89aa-576b-4e7d-b554-a5503ddb3a17}*SharedItemsImports = 4
 		wenslerh\wenslerh\wenslerh.projitems*{d4c2222e-01a6-4ecb-bf83-b01f64d02e7c}*SharedItemsImports = 4
+		wenslerh\wenslerh\wenslerh.projitems*{f4f1ffc9-684e-4c32-be00-a8ea75e2a9df}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
