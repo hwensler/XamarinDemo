@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace wenslerh
 {
-    public class ItemDatabase
+    public class ItemsDatabase
     {
         readonly SQLiteAsyncConnection database;
 
