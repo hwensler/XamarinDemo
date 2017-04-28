@@ -31,7 +31,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ItemsDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MainMenu.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\ItemsPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>

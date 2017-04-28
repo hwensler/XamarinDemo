@@ -20,7 +20,7 @@ namespace wenslerh.ViewModels
         public Command LoadItemsCommand { get; set; }
 
         //data will come from ItemsPage
-        App11.Services.ItemsPage data;
+        wenslerh.Services.ItemsDatabase AllItems;
 
 
         public ItemsViewModel()
@@ -43,10 +43,10 @@ namespace wenslerh.ViewModels
                 Items.Clear();
 
                 //load the data
-                data = new App11.Services.ItemsPage();
+                AllItems = new wenslerh.Services.ItemsDatabase();
 
                 //take the loaded data and put it where we can render it
-                var items = data.items;
+                var items = AllItems.items;
                 Items.ReplaceRange(items);
             }
             catch (Exception ex)

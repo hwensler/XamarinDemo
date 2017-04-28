@@ -29,7 +29,7 @@ namespace wenslerh
 
             if (rowCount == 0)
             {
-                var _items = new List<Item>
+                var AllItems = new List<Item>
                 {
                     new Item {ID = 1, Name = "Sword", Description= "A really cool sword. ", Strength = 1},
                     new Item {ID = 2, Name = "Shield", Description="A really cool shield. ", Strength = 1},
