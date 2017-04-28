@@ -2,11 +2,11 @@
 {
     public class Item : BaseDataObject
 	{
-		string text = string.Empty;
-		public string Text
+		string name = string.Empty;
+		public string Name
 		{
-			get { return text; }
-			set { SetProperty(ref text, value); }
+			get { return name; }
+			set { SetProperty(ref name, value); }
 		}
 
 		string description = string.Empty;
