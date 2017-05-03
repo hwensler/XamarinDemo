@@ -1,22 +1,17 @@
-﻿namespace wenslerh.Models
+﻿
+using SQLite;
+
+namespace wenslerh.Models
 {
     public class Item : BaseDataObject
 	{
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-		string name = string.Empty;
-		public string Name
-		{
-			get { return name; }
-			set { SetProperty(ref name, value); }
-		}
+        public string Name { get; set; }
 
-		string description = string.Empty;
-		public string Description
-		{
-			get { return description; }
-			set { SetProperty(ref description, value); }
-		}
+        //a description of the item
+		public string Description { get; set; }
 
         //the strength of the item
         public int Strength { get; set; }
