@@ -22,7 +22,7 @@ namespace wenslerh
             {
                 Children =
                 {
-                    new NavigationPage(new ItemsPage())
+                    new NavigationPage(new MainMenuPage())
                     {
                         Title = "Browse",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
