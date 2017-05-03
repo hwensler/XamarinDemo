@@ -19,7 +19,7 @@ namespace wenslerh.Views
             base.OnAppearing();
 
             //reset the resume id 
-            ((App)App.Current).ResumeAtItemId = -1;
+            ((App)App.Current).ResumeAtItemId = "";
 
             //if the database is empty, fill it!!!
             await App.Database.Initialize();

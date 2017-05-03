@@ -7,13 +7,13 @@ namespace wenslerh.Models
     {
         public BaseDataObject()
         {
-            baseId = Guid.NewGuid().ToString();
+            ID = Guid.NewGuid().ToString();
         }
 
         /// <summary>
         /// Id for item
         /// </summary>
-        public string baseId { get; set; }
+        public string ID { get; set; }
 
         /// <summary>
         /// Azure created at time stamp

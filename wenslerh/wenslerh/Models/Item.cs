@@ -5,8 +5,6 @@ namespace wenslerh.Models
 {
     public class Item : BaseDataObject
 	{
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
 
         public string Name { get; set; }
 

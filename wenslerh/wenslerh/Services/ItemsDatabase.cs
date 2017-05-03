@@ -29,12 +29,12 @@ namespace wenslerh
             {
                 var AllItems = new List<Item>
                 {
-                    new Item {ID = 1, Name = "Sword", Description= "A really cool sword. ", Strength = 1},
-                    new Item {ID = 2, Name = "Shield", Description="A really cool shield. ", Strength = 1},
-                    new Item {ID = 3, Name = "Shoes", Description="A really cool pair of shoes. ", Strength = 1},
-                    new Item {ID = 4, Name = "Bow", Description="A realy cool bow.", Strength = 1},
-                    new Item {ID = 5, Name = "Lance", Description="A really cool lance. ", Strength = 1},
-                    new Item {ID = 6, Name  = "Axe", Description="A really cool axe. " , Strength = 1},
+                    new Item {Name = "Sword", Description= "A really cool sword. ", Strength = 1},
+                    new Item {Name = "Shield", Description="A really cool shield. ", Strength = 1},
+                    new Item {Name = "Shoes", Description="A really cool pair of shoes. ", Strength = 1},
+                    new Item {Name = "Bow", Description="A realy cool bow.", Strength = 1},
+                    new Item {Name = "Lance", Description="A really cool lance. ", Strength = 1},
+                    new Item {Name  = "Axe", Description="A really cool axe. " , Strength = 1},
                 };
 
                 foreach (Item item in AllItems)
@@ -49,14 +49,14 @@ namespace wenslerh
             return database.Table<Item>().ToListAsync();
         }
 
-        public Task<Item> GetItemAsync(int id)
+        public Task<Item> GetItemAsync(String id)
         {
             return database.Table<Item>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
         public Task<int> SaveItemAsync(Item item)
         {
-            if (item.ID != 0)
+            if (item.ID != "")
             {
                 return database.UpdateAsync(item);
             }

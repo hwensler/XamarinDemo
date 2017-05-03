@@ -51,6 +51,6 @@ namespace wenslerh
             }
         }
 
-        public int ResumeAtItemId { get; set; }
+        public string ResumeAtItemId { get; set; }
     }
 }
