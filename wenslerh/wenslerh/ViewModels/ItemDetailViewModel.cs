@@ -21,6 +21,8 @@ namespace wenslerh.ViewModels
         {
 
             Title = "Item Details";
+
+
             Item = item;
         }
 
