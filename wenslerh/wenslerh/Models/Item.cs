@@ -5,7 +5,11 @@ namespace wenslerh.Models
 {
     public class Item : BaseDataObject
 	{
+        //make the ID the pk
+        [PrimaryKey]
+        public string ID { get; set; }
 
+        //the name of the item
         public string Name { get; set; }
 
         //a description of the item
