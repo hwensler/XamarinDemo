@@ -24,12 +24,12 @@ namespace wenslerh.Services
             pages = new List<MenuPage>();
             var _items = new List<MenuPage>
             {
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Character", Description="View all current characters."},
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Inventory", Description="View the current party's inventory."},
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Monsters", Description="See the monsters your party is up against."},
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
-                new MenuPage { ID = Guid.NewGuid().ToString(), Text = "Battle", Description="This is where the action is."},
+                new MenuPage {Text = "Score", Description="Check the current score."},
+                new MenuPage {Text = "Character", Description="View all current characters."},
+                new MenuPage {Text = "Inventory", Description="View the current party's inventory."},
+                new MenuPage {Text = "Monsters", Description="See the monsters your party is up against."},
+                new MenuPage {Text = "Items", Description="Check out all possible items."},
+                new MenuPage {Text = "Battle", Description="This is where the action is."},
             };
 
             foreach (MenuPage item in _items)
