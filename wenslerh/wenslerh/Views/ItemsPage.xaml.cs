@@ -41,10 +41,8 @@ namespace wenslerh.Views
             ((App)App.Current).ResumeAtItemId = (e.SelectedItem as Item).ID;
             Debug.WriteLine("setting ResumeAtItemId = " + (e.SelectedItem as Item).ID);
 
-            await Navigation.PushAsync(new ItemDetailPage
-            {
-                BindingContext = e.SelectedItem as Item
-            });
+            //load items detail page with the selected item as the item!
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(e.SelectedItem as Item)));
         }
     }
 }
