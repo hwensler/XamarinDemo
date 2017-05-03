@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using wenslerh.Models;
 
 namespace wenslerh.Views
 {
@@ -26,6 +27,28 @@ namespace wenslerh.Views
 
             var strength = new Entry();
             name.SetBinding(Entry.TextProperty, "Strength");
+
+            var saveButton = new Button { Text = "Save" };
+            saveButton.Clicked += async (sender, e) =>
+            {
+                var item = (Item)BindingContext;
+                await App.Database.SaveItemAsync(item);
+                await Navigation.PopAsync();
+            };
+
+            var deleteButton = new Button { Text = "Delete" };
+            deleteButton.Clicked += async (sender, e) =>
+            {
+                var item = (Item)BindingContext;
+                await App.Database.DeleteItemAsync(item);
+                await Navigation.PopAsync();
+            };
+
+            var cancelButton = new Button { Text = "Cancel" };
+            cancelButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PopAsync();
+            };
         }
 	}
 }
