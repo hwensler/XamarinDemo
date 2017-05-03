@@ -5,7 +5,7 @@
               Title="Items Page"
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Create" Clicked="OnItemAdded" />
+        <ToolbarItem Text="Add Item" Clicked="OnItemAdded" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
