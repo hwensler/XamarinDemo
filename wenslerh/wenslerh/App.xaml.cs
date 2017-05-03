@@ -1,5 +1,4 @@
 ﻿using wenslerh.Views;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,6 +7,8 @@ namespace wenslerh
 {
     public partial class App : Application
     {
+
+
         public App()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace wenslerh
             };
         }
 
+        //initialize database
         static ItemsDatabase database;
 
         public static ItemsDatabase Database
@@ -43,7 +45,7 @@ namespace wenslerh
             {
                 if (database == null)
                 {
-                    database = new ItemsDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("ItemSQLite.db3"));
+                    database = new ItemsDatabase(DependencyService.Get<IFileHelper>().GetLocalFilePath("Items.db3"));
                 }
                 return database;
             }

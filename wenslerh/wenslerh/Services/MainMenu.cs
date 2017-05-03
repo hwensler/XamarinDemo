@@ -24,12 +24,12 @@ namespace wenslerh.Services
             pages = new List<MenuPage>();
             var _items = new List<MenuPage>
             {
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Character", Description="View all current characters."},
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Inventory", Description="View the current party's inventory."},
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Monsters", Description="See the monsters your party is up against."},
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
-                new MenuPage { Id = Guid.NewGuid().ToString(), Text = "Battle", Description="This is where the action is."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Score", Description="Check the current score."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Character", Description="View all current characters."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Inventory", Description="View the current party's inventory."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Monsters", Description="See the monsters your party is up against."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Items", Description="Check out all possible items."},
+                new MenuPage { baseId = Guid.NewGuid().ToString(), Text = "Battle", Description="This is where the action is."},
             };
 
             foreach (MenuPage item in _items)
