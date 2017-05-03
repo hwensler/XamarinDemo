@@ -1,6 +1,6 @@
-﻿
+﻿using System;
 using wenslerh.ViewModels;
-
+using wenslerh.Models;
 using Xamarin.Forms;
 
 namespace wenslerh.Views
@@ -20,6 +20,25 @@ namespace wenslerh.Views
 			InitializeComponent();
 
 			BindingContext = this.viewModel = viewModel;
-		}
-	}
+        }
+
+        async void OnSaveClicked(object sender, EventArgs e)
+        {
+            var item = (Item)BindingContext;
+            await App.Database.SaveItemAsync(item);
+            await Navigation.PopAsync();
+        }
+
+        async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            var item = (Item)BindingContext;
+            await App.Database.DeleteItemAsync(item);
+            await Navigation.PopAsync();
+        }
+
+        async void OnCancelClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }
