@@ -17,6 +17,7 @@ namespace App11
         public ItemsViewModel()
         {
             Title = "Items Page";
+            Icon = Device.OnPlatform(null, "plus.png", "plus.png")
 
             var toolbarItem = new ToolbarItem
             {
