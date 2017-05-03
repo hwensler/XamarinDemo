@@ -3,4 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wenslerh.Views.ItemCreatePage"
              Title ="Create a New Item">
+    <ContentPage.Content>
+		<StackLayout Spacing="20" Padding="15">
+			<Label Text="Item Name" FontSize="Medium" />
+			<Entry Text="{Binding Item.Name}" FontSize="Small" />
+			<Label Text="Item Description" FontSize="Medium" />
+			<Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+            <Label Text="Item Strength" FontSize="Medium" />
+			<Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>
