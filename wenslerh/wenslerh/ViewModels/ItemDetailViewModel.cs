@@ -17,15 +17,26 @@ namespace wenslerh.ViewModels
     {
 
         public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public ItemDetailViewModel()
         {
 
             Title = "Item Details";
 
+            var name = new Entry();
+            name.SetBinding(Entry.TextProperty, "Name");
 
-            Item = item;
+            var description = new Entry();
+            description.SetBinding(Entry.TextProperty, "Description");
+
+            var strength = new Entry();
+            strength.SetBinding(Entry.TextProperty, "Strength");
+
         }
 
+        public ItemDetailViewModel(Item i)
+        {
+            Item = i;
+        }
         int quantity = 1;
         public int Quantity
         {
