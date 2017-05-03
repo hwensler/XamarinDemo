@@ -30,10 +30,7 @@ namespace wenslerh.Views
 
         async void OnItemAdded(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ItemDetailPage
-            {
-                BindingContext = new Item()
-            });
+            await Navigation.PushAsync(new ItemCreatePage());
         }
 
         async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)

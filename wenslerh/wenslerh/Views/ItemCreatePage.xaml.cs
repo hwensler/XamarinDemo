@@ -10,45 +10,48 @@ using wenslerh.Models;
 
 namespace wenslerh.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ItemCreatePage : ContentPage
-	{
-		public ItemCreatePage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ItemCreatePage : ContentPage
+    {
+        //declare the new item
+        public Item newItem { get; set; }
+
+        public ItemCreatePage()
+        {
+            InitializeComponent();
 
             Title = "Create an Item";
 
-            var name = new Entry();
-            name.SetBinding(Entry.TextProperty, "Name");
-
-            var description = new Entry();
-            description.SetBinding(Entry.TextProperty, "Name");
-
-            var strength = new Entry();
-            name.SetBinding(Entry.TextProperty, "Strength");
-
-            var saveButton = new Button { Text = "Save" };
-            saveButton.Clicked += async (sender, e) =>
+            newItem = new Item
             {
-                var item = (Item)BindingContext;
-                await App.Database.SaveItemAsync(item);
-                await Navigation.PopAsync();
+                Name = "Item Name",
+                Description = "Item Description",
+                Strength = 0,
             };
 
-            var deleteButton = new Button { Text = "Delete" };
-            deleteButton.Clicked += async (sender, e) =>
-            {
-                var item = (Item)BindingContext;
-                await App.Database.DeleteItemAsync(item);
-                await Navigation.PopAsync();
-            };
+            //give it a primary key
+            newItem.ID = Guid.NewGuid().ToString();
 
-            var cancelButton = new Button { Text = "Cancel" };
-            cancelButton.Clicked += async (sender, e) =>
-            {
-                await Navigation.PopAsync();
-            };
+            BindingContext = this;
         }
-	}
+
+        async void OnSaveClicked(object sender, EventArgs e)
+        {
+
+            await App.Database.SaveItemAsync(newItem);
+            await Navigation.PopAsync();
+        }
+
+        async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            var item = (Item)BindingContext;
+            await App.Database.DeleteItemAsync(newItem);
+            await Navigation.PopAsync();
+        }
+
+        async void OnCancelClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }
