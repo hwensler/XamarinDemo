@@ -53,6 +53,13 @@ namespace App11
                     };
                     strength.SetBinding(Label.TextProperty, "Strength");
 
+                    var description = new Label
+                    {
+                        VerticalTextAlignment = TextAlignment.Center,
+                        HorizontalOptions = LayoutOptions.StartAndExpand
+                    };
+                    description.SetBinding(Label.TextProperty, "Description");
+
 
                     var stackLayout = new StackLayout
                     {
