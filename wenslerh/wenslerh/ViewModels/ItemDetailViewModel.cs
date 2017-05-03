@@ -17,8 +17,9 @@ namespace wenslerh.ViewModels
     {
 
         public Item Item { get; set; }
-        public ItemDetailViewModel()
+        public ItemDetailViewModel(Item i)
         {
+            Item = i;
 
             Title = "Item Details";
 
@@ -33,10 +34,6 @@ namespace wenslerh.ViewModels
 
         }
 
-        public ItemDetailViewModel(Item i)
-        {
-            Item = i;
-        }
         int quantity = 1;
         public int Quantity
         {
