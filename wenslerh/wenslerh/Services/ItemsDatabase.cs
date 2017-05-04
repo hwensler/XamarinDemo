@@ -56,14 +56,16 @@ namespace wenslerh
 
         public Task<int> SaveItemAsync(Item item)
         {
-            if (item.ID != "")
-            {
-                return database.UpdateAsync(item);
-            }
-            else
-            {
+            //if the item exists
+           // if (GetItemAsync(item.ID) != null)
+            //{
+                //return database.UpdateAsync(item);
+            //}
+            //else
+            //else
+            //{
                 return database.InsertAsync(item);
-            }
+           //}
         }
 
         public Task<int> DeleteItemAsync(Item item)

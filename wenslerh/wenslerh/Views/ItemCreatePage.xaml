@@ -12,7 +12,6 @@
             <Label Text="Item Strength" FontSize="Medium" />
             <Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
             <Button Text="Save" Clicked="OnSaveClicked" />
-            <Button Text="Delete" Clicked="OnDeleteClicked" />
             <Button Text="Cancel" Clicked="OnCancelClicked" />
         </StackLayout>
     </ContentPage.Content>

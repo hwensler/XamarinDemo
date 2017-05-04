@@ -8,7 +8,7 @@ using wenslerh.Views;
 using wenslerh.Models;
 using wenslerh;
 
-namespace App11
+namespace wenslerh
 {
     public class ItemsViewModel : ContentPage
     {
@@ -71,6 +71,7 @@ namespace App11
                     return new ViewCell { View = stackLayout };
                 })
             };
+
 
 
             listView.ItemSelected += async (sender, e) =>

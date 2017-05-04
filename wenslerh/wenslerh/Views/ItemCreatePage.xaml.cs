@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using wenslerh.Models;
+using wenslerh.ViewModels;
 
 namespace wenslerh.Views
 {
@@ -27,25 +28,19 @@ namespace wenslerh.Views
                 Name = "Item Name",
                 Description = "Item Description",
                 Strength = 0,
+                ID = Guid.NewGuid().ToString(),//give it a primary key
             };
 
-            //give it a primary key
-            newItem.ID = Guid.NewGuid().ToString();
-
             BindingContext = this;
+
         }
 
         async void OnSaveClicked(object sender, EventArgs e)
         {
 
+            System.Diagnostics.Debug.Write("Savinging item " + newItem.Name);
+            var item = (ItemCreatePage)BindingContext;
             await App.Database.SaveItemAsync(newItem);
-            await Navigation.PopAsync();
-        }
-
-        async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            var item = (Item)BindingContext;
-            await App.Database.DeleteItemAsync(newItem);
             await Navigation.PopAsync();
         }
 

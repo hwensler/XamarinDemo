@@ -31,8 +31,8 @@ namespace wenslerh.Views
 
         async void OnDeleteClicked(object sender, EventArgs e)
         {
-            var item = (Item)BindingContext;
-            await App.Database.DeleteItemAsync(item);
+            var item = (ItemDetailViewModel)BindingContext;
+            await App.Database.DeleteItemAsync(item.Item);
             await Navigation.PopAsync();
         }
 
