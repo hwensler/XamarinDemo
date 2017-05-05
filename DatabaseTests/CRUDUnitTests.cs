@@ -77,8 +77,8 @@ namespace DatabaseTests
 
             Assert.AreEqual(secondCount, firstCount + 1, "The total number of rows before and insert" +
                 "should be one less than the total number of rows after an insert");
-
         }
+
 
 
 
