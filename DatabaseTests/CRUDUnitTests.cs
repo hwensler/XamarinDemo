@@ -135,7 +135,8 @@ namespace DatabaseTests
 
             //make sure the strength is 22
 
-            Assert.AreEqual(22, finalItem.Strength);
+            Assert.AreEqual(22, finalItem.Strength, "The item strength should be 22. ");
+
         }
 
         //delete an item that does exist
@@ -160,7 +161,9 @@ namespace DatabaseTests
             //count how many testIDs are in the database
             int howManyExist = testDatabase.DoesItemExist("testID").Result;
 
-            Assert.AreEqual(howManyExist, 0);
+            Assert.AreEqual(howManyExist, 0, "There should be 0 of this item in the database. );
+
+
 
         }
     }
