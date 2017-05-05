@@ -9,6 +9,8 @@ using Xamarin.Forms.Xaml;
 using wenslerh.Models;
 using wenslerh.ViewModels;
 
+//a page for creating new items 
+
 namespace wenslerh.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -28,13 +30,16 @@ namespace wenslerh.Views
                 Name = "Item Name",
                 Description = "Item Description",
                 Strength = 0,
-                ID = Guid.NewGuid().ToString(),//give it a primary key
+
+                //give it a primary key
+                ID = Guid.NewGuid().ToString(),
             };
 
             BindingContext = this;
 
         }
 
+        //when you click save
         async void OnSaveClicked(object sender, EventArgs e)
         {
 
@@ -44,6 +49,7 @@ namespace wenslerh.Views
             await Navigation.PopAsync();
         }
 
+        //when you click cancel
         async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
