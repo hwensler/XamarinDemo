@@ -15,7 +15,8 @@ namespace DatabaseTests
         {
             //set up a new database
             var testDatabase = new ItemsDatabase(Path.GetTempFileName());
-            Assert.IsNotNull(testDatabase);
+            Assert.IsNotNull(testDatabase, "The database should not be null after creation. ");
+
         }
     }
 }
