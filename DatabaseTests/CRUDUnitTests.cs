@@ -79,7 +79,33 @@ namespace DatabaseTests
                 "should be one less than the total number of rows after an insert");
         }
 
+        //tests read ability
+        [TestMethod]
+        public async Task ReadFromDatabaseAsync()
+        {
+            //define an item
+            Item testItem = new Item
+            {
+                ID = "testID",
+                Name = "AVeryTestableName",
+                Description = "A really cool sword. ",
+                Strength = 1
+            };
 
+            //put it in the database
+            await testDatabase.SaveItemAsync(testItem);
+
+            //retrieve it
+            Item thisItem = testDatabase.GetItemAsync("testID").Result;
+
+            //make sure the item you got is one you inserted
+            string testName = thisItem.Name;
+
+            Assert.AreEqual(testName, "AVeryTestableName", "These names should be the same");
+
+
+
+        }
 
 
     }
