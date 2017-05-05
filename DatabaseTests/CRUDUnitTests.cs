@@ -95,18 +95,47 @@ namespace DatabaseTests
             //put it in the database
             await testDatabase.SaveItemAsync(testItem);
 
-            //retrieve it
-            Item thisItem = testDatabase.GetItemAsync("testID").Result;
+            //read it from the database
+            var readItem = testDatabase.GetItemAsync("testID").Result;
 
             //make sure the item you got is one you inserted
-            string testName = thisItem.Name;
+            string testName = readItem.Name;
 
             Assert.AreEqual(testName, "AVeryTestableName", "These names should be the same");
-
-
-
         }
 
+        //test update ability
+        [TestMethod]
+        public async Task UpdateDatabaseAsync()
+        {
+            //define an item
+            Item testItem = new Item
+            {
+                ID = "testID",
+                Name = "Sword",
+                Description = "A really cool sword. ",
+                Strength = 1
+            };
 
+            //put it in the database
+            await testDatabase.SaveItemAsync(testItem);
+
+            //update it
+            Item testItemUpdate = new Item
+            {
+                ID = "testID",
+                Name = "Cooler Sword",
+                Description = "A really cool sword. ",
+                Strength = 22
+            };
+            await testDatabase.SaveItemAsync(testItemUpdate);
+
+            //get the item
+            var finalItem = await testDatabase.GetItemAsync("testID");
+
+            //make sure the strength is 22
+
+            Assert.AreEqual(22, finalItem.Strength);
+        }
     }
 }
