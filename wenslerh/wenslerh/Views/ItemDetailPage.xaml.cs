@@ -52,9 +52,12 @@ namespace wenslerh.Views
             await Navigation.PopAsync();
         }
 
-        async void OnUpdateClicked(object sender, EventArgs e)
+        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new ItemUpdatePage());
+            ((App)App.Current).ResumeAtItemId = (e.SelectedItem as Item).ID;
+
+            //load items detail page with the selected item as the item!
+            await Navigation.PushAsync(new ItemUpdatePage(e.SelectedItem as Item));
         }
 
         async void OnDeleteClicked(object sender, EventArgs e)

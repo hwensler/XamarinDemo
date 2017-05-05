@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="wenslerh.Views.ItemUpdatePage">
+             x:Class="wenslerh.Views.ItemUpdatePage"
+             Title ="Update An Item">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Item Name" FontSize="Medium" />
+            <Entry Text="{Binding Item.Name}" FontSize="Small" />
+            <Label Text="Item Description" FontSize="Medium" />
+            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+            <Label Text="Item Strength" FontSize="Medium" />
+            <Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
+            <Button Text="Save" Clicked="OnSaveClicked" />
+            <Button Text="Cancel" Clicked="OnCancelClicked" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
