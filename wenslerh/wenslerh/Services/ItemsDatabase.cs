@@ -85,9 +85,6 @@ namespace wenslerh
            //if the item exist
             if (exists != 0)
             {
-                System.Diagnostics.Debug.Write("The Item's ID is: " + item.ID);
-                System.Diagnostics.Debug.Write("The async item ID is: " +item.ID);
-
                 return await database.UpdateAsync(item);
             }
             //else
