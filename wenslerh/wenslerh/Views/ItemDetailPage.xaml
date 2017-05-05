@@ -10,6 +10,7 @@
         <Label Text="Strength: " FontSize ="Medium" />
         <Label Text="{Binding Item.Strength}" FontSize="Small"/>
         <Button Text="Save" Clicked="OnSaveClicked" />
+        <Button Text ="Update" Clicked="OnUpdateClicked" />
         <Button Text="Delete" Clicked="OnDeleteClicked" />
         <Button Text="Cancel" Clicked="OnCancelClicked" />
     </StackLayout>

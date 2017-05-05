@@ -52,6 +52,11 @@ namespace wenslerh.Views
             await Navigation.PopAsync();
         }
 
+        async void OnUpdateClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemUpdatePage());
+        }
+
         async void OnDeleteClicked(object sender, EventArgs e)
         {
             var item = (ItemDetailViewModel)BindingContext;
