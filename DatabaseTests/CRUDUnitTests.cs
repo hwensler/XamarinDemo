@@ -33,10 +33,25 @@ namespace DatabaseTests
 
         //tests that an item doesn't return it exists if it doesn't exist
         [TestMethod]
-        public void DoesItemExistInDatabase()
+        public void ItemDoesNotExistInDatabase()
         {
             Task<int> result = testDatabase.DoesItemExist("1");
             Assert.AreNotEqual(1, result, "The item hasn't been inserted and should not exist");
+
+        }
+
+        //test that an item does return that an item exists if it does indeed exist
+        [TestMethod]
+        public async Task ItemDoesExistInDatabase()
+        {
+            //define an item
+            Item testItem = new Item { ID = "testID", Name = "Sword", Description = "A really cool sword. ", Strength = 1 };
+
+            //insert it
+            await testDatabase.SaveItemAsync(testItem);
+
+            Task<int> result = testDatabase.DoesItemExist("testID");
+            Assert.AreNotEqual(1, result, "The item has been inserted and should exist");
 
         }
 
