@@ -58,7 +58,7 @@ namespace DatabaseTests
 
         }
 
-        //tests insert by showing an item does exist after it is inserted
+        //tests INSERT by showing the total rows has increased by 1 after a new insertion
         [TestMethod]
         public async Task InsertIntoDatabaseAsync()
         {
