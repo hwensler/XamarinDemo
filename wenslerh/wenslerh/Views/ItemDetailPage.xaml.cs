@@ -22,6 +22,14 @@ namespace wenslerh.Views
                 await Navigation.PopAsync();
             };
 
+            var updateButton = new Button { Text = "Update" };
+            updateButton.Clicked += async (sender, e) =>
+            {
+                var item = (ItemDetailViewModel)BindingContext;
+                //load items detail page with the selected item as the item!
+                await Navigation.PushAsync(new ItemUpdatePage(item.Item));
+            };
+
             var deleteButton = new Button { Text = "Delete" };
             deleteButton.Clicked += async (sender, e) =>
             {
@@ -52,12 +60,12 @@ namespace wenslerh.Views
             await Navigation.PopAsync();
         }
 
-        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OnUpdateClicked(object sender, EventArgs e)
         {
-            ((App)App.Current).ResumeAtItemId = (e.SelectedItem as Item).ID;
+            var item = (ItemDetailViewModel)BindingContext;
 
             //load items detail page with the selected item as the item!
-            await Navigation.PushAsync(new ItemUpdatePage(e.SelectedItem as Item));
+            await Navigation.PushAsync(new ItemUpdatePage(item.Item));
         }
 
         async void OnDeleteClicked(object sender, EventArgs e)
