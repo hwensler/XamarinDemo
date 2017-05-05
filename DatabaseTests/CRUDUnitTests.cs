@@ -137,5 +137,31 @@ namespace DatabaseTests
 
             Assert.AreEqual(22, finalItem.Strength);
         }
+
+        //delete an item that does exist
+        [TestMethod]
+        public async Task DeleteDatabaseAsync()
+        {
+            //define an item
+            Item testItem = new Item
+            {
+                ID = "testID",
+                Name = "Sword",
+                Description = "A really cool sword. ",
+                Strength = 1
+            };
+
+            //put it in the database
+            await testDatabase.SaveItemAsync(testItem);
+
+            //delete it
+            await testDatabase.DeleteItemAsync(testItem);
+
+            //count how many testIDs are in the database
+            int howManyExist = testDatabase.DoesItemExist("testID").Result;
+
+            Assert.AreEqual(howManyExist, 0);
+
+        }
     }
 }
