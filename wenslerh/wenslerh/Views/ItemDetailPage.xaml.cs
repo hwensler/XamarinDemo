@@ -18,20 +18,6 @@ namespace wenslerh.Views
 
         }
 
-        //protected override async void OnAppearing()
-        //{
-        //    base.OnAppearing();
-
-        //    //reset the resume id 
-        //    ((App)App.Current).ResumeAtItemId = "";
-
-        //    //if the database is empty, fill it!!!
-        //    await App.Database.Initialize();
-
-        //    StackLayout.ItemsSource = await App.Database.GetItemsAsync();
-
-        //}
-
         public ItemDetailPage(ItemDetailViewModel viewModel)
 		{
 			InitializeComponent();

@@ -1,5 +1,5 @@
 ﻿/**
- * This is where the items list is populated from... for now.
+ * This is the items database
  * **/
  
  using System.Collections.Generic;

@@ -43,7 +43,7 @@ namespace wenslerh.Views
         {
 
             await App.Database.SaveItemAsync(thisItem);
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new ItemsPage());
         }
 
         //when you click cancel
