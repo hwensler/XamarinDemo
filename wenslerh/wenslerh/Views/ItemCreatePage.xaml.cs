@@ -42,9 +42,6 @@ namespace wenslerh.Views
         //when you click save
         async void OnSaveClicked(object sender, EventArgs e)
         {
-
-            System.Diagnostics.Debug.Write("Savinging item " + newItem.Name);
-            var item = (ItemCreatePage)BindingContext;
             await App.Database.SaveItemAsync(newItem);
             await Navigation.PopAsync();
         }

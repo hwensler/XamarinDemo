@@ -6,11 +6,11 @@
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Item Name" FontSize="Medium" />
-            <Entry Text="{Binding Item.Name}" FontSize="Small" />
+            <Entry Text="{Binding newItem.Name}" FontSize="Small" />
             <Label Text="Item Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
+            <Editor Text="{Binding newItem.Description}" FontSize="Small" Margin="0" />
             <Label Text="Item Strength" FontSize="Medium" />
-            <Editor Text="{Binding Item.Strength}" FontSize="Small" Margin="0" />
+            <Editor Text="{Binding newItem.Strength}" FontSize="Small" Margin="0" />
             <Button Text="Save" Clicked="OnSaveClicked" />
             <Button Text="Cancel" Clicked="OnCancelClicked" />
         </StackLayout>

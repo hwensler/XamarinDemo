@@ -5,12 +5,12 @@
              Title ="Update An Item">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="{Binding Name}" FontSize="Medium" Margin="0" />
-            <Editor Text="{Binding Name}" FontSize="Small" Margin="0" />
-            <Label Text="{Binding Description}" FontSize="Medium" Margin="0" />
-            <Editor Text="{Binding Description}" FontSize="Small" Margin="0" />
-            <Label Text="{Binding Strength}" FontSize="Medium" Margin="0" />
-            <Editor Text="{Binding Strength}" FontSize="Small" Margin="0" />
+            <Label Text="Name" FontSize="Medium" Margin="0" />
+            <Editor Text="{Binding thisItem.Name}" FontSize="Small" Margin="0" />
+            <Label Text="Description" FontSize="Medium" Margin="0" />
+            <Editor Text="{Binding thisItem.Description}" FontSize="Small" Margin="0" />
+            <Label Text="Strenth" FontSize="Medium" Margin="0" />
+            <Editor Text="{Binding thisItem.Strength}" FontSize="Small" Margin="0" />
             <Button Text="Save" Clicked="OnSaveClicked" />
             <Button Text="Cancel" Clicked="OnCancelClicked" />
         </StackLayout>

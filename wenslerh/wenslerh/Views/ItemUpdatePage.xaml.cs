@@ -35,25 +35,13 @@ namespace wenslerh.Views
 
             Title = "Update an Item";
 
-            //thisItem = new Item
-            //{
-            //    Name = item.Name,
-            //    Description = item.Description,
-            //    Strength = item.Strength,
-
-            //    //remember its primary key
-            //    ID = thisItem.ID,
-            //};
-
-            BindingContext = thisItem;
+            BindingContext = this;
         }
 
         //when you click save
         async void OnSaveClicked(object sender, EventArgs e)
         {
 
-            System.Diagnostics.Debug.Write("Savinging item " + thisItem.Name);
-            var item = BindingContext;
             await App.Database.SaveItemAsync(thisItem);
             await Navigation.PopAsync();
         }
