@@ -13,6 +13,29 @@ namespace wenslerh.Views
         public ItemDetailPage()
         {
             InitializeComponent();
+
+            var saveButton = new Button { Text = "Save" };
+            saveButton.Clicked += async (sender, e) =>
+            {
+                var item = (Item)BindingContext;
+                await App.Database.SaveItemAsync(item);
+                await Navigation.PopAsync();
+            };
+
+            var deleteButton = new Button { Text = "Delete" };
+            deleteButton.Clicked += async (sender, e) =>
+            {
+                var item = (Item)BindingContext;
+                await App.Database.DeleteItemAsync(item);
+                await Navigation.PopAsync();
+            };
+
+            var cancelButton = new Button { Text = "Cancel" };
+            cancelButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PopAsync();
+            };
+
         }
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
@@ -24,8 +47,8 @@ namespace wenslerh.Views
 
         async void OnSaveClicked(object sender, EventArgs e)
         {
-            var item = (Item)BindingContext;
-            await App.Database.SaveItemAsync(item);
+            var item = (ItemDetailViewModel)BindingContext;
+            await App.Database.SaveItemAsync(item.Item);
             await Navigation.PopAsync();
         }
 

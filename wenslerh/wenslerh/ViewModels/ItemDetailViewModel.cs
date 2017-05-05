@@ -31,7 +31,6 @@ namespace wenslerh.ViewModels
 
             var strength = new Entry();
             strength.SetBinding(Entry.TextProperty, "Strength");
-
         }
 
     }
