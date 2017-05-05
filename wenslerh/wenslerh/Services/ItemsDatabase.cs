@@ -51,21 +51,50 @@ namespace wenslerh
 
         public Task<Item> GetItemAsync(String id)
         {
-            return database.Table<Item>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return database.Table<Item>().Where(i => i.ID == id).FirstAsync();
         }
 
-        public Task<int> SaveItemAsync(Item item)
+
+        //returns the number of items with this id
+        public async Task<int> DoesItemExist(String id)
         {
-            //if the item exists
-           // if (GetItemAsync(item.ID) != null)
-            //{
-                //return database.UpdateAsync(item);
-            //}
+            int count; 
+
+            //if there is at least one item with that id and you can run the query
+            try
+            {
+                //tell me how many items have that id
+                count = await database.ExecuteScalarAsync<int>("SELECT Count(*) from Item WHERE ID = '" + id + "';");
+            }
+
+            //else, let me know there are none
+            catch
+            {
+                count = 0;
+            }
+
+            return count;
+
+        }
+
+        //save the item!
+        public async Task<int> SaveItemAsync(Item item)
+        {
+            int exists = await DoesItemExist(item.ID);
+
+           //if the item exist
+            if (exists != 0)
+            {
+                System.Diagnostics.Debug.Write("The Item's ID is: " + item.ID);
+                System.Diagnostics.Debug.Write("The async item ID is: " +item.ID);
+
+                return await database.UpdateAsync(item);
+            }
             //else
-            //else
-            //{
-                return database.InsertAsync(item);
-           //}
+            else
+            {
+                return await database.InsertAsync(item);
+            }
         }
 
         public Task<int> DeleteItemAsync(Item item)
