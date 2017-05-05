@@ -45,7 +45,10 @@ namespace DatabaseTests
         public async Task ItemDoesExistInDatabase()
         {
             //define an item
-            Item testItem = new Item { ID = "testID", Name = "Sword", Description = "A really cool sword. ", Strength = 1 };
+            Item testItem = new Item { ID = "testID",
+                Name = "Sword",
+                Description = "A really cool sword. ",
+                Strength = 1 };
 
             //insert it
             await testDatabase.SaveItemAsync(testItem);
@@ -62,7 +65,10 @@ namespace DatabaseTests
             int firstCount = (testDatabase.CountRows()).Result;
 
             //define an item
-            Item testItem = new Item { ID = Guid.NewGuid().ToString(), Name = "Sword", Description = "A really cool sword. ", Strength = 1 };
+            Item testItem = new Item { ID = Guid.NewGuid().ToString(),
+                Name = "Better Sword",
+                Description = "A better sword. ",
+                Strength = 19 };
 
             //insert it
             await testDatabase.SaveItemAsync(testItem);
@@ -71,7 +77,6 @@ namespace DatabaseTests
 
             Assert.AreEqual(secondCount, firstCount + 1, "The total number of rows before and insert" +
                 "should be one less than the total number of rows after an insert");
-
 
         }
 
