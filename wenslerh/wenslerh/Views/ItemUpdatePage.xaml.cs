@@ -29,6 +29,7 @@ namespace wenslerh.Views
         {
 
             InitializeComponent();
+            thisItem = item;
 
             Title = "Update an Item";
 
@@ -50,7 +51,7 @@ namespace wenslerh.Views
         {
 
             System.Diagnostics.Debug.Write("Savinging item " + thisItem.Name);
-            var item = (ItemCreatePage)BindingContext;
+            var item = BindingContext;
             await App.Database.SaveItemAsync(thisItem);
             await Navigation.PopAsync();
         }
