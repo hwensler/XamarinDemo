@@ -23,7 +23,7 @@ namespace DatabaseTests
 
         //tests that a database is created
         [TestMethod]
-        public void CreateDatabase()
+        public void CreateDatabaseCreatesDatabase()
         {
             //set up a new database
             var createDatabase = new ItemsDatabase(Path.GetTempFileName());
