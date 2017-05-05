@@ -14,37 +14,23 @@ namespace wenslerh.Views
         {
             InitializeComponent();
 
-            var saveButton = new Button { Text = "Save" };
-            saveButton.Clicked += async (sender, e) =>
-            {
-                var item = (Item)BindingContext;
-                await App.Database.SaveItemAsync(item);
-                await Navigation.PopAsync();
-            };
 
-            var updateButton = new Button { Text = "Update" };
-            updateButton.Clicked += async (sender, e) =>
-            {
-                var item = (ItemDetailViewModel)BindingContext;
-                //load items detail page with the selected item as the item!
-                await Navigation.PushAsync(new ItemUpdatePage(item.Item));
-            };
-
-            var deleteButton = new Button { Text = "Delete" };
-            deleteButton.Clicked += async (sender, e) =>
-            {
-                var item = (Item)BindingContext;
-                await App.Database.DeleteItemAsync(item);
-                await Navigation.PopAsync();
-            };
-
-            var cancelButton = new Button { Text = "Cancel" };
-            cancelButton.Clicked += async (sender, e) =>
-            {
-                await Navigation.PopAsync();
-            };
 
         }
+
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+
+        //    //reset the resume id 
+        //    ((App)App.Current).ResumeAtItemId = "";
+
+        //    //if the database is empty, fill it!!!
+        //    await App.Database.Initialize();
+
+        //    StackLayout.ItemsSource = await App.Database.GetItemsAsync();
+
+        //}
 
         public ItemDetailPage(ItemDetailViewModel viewModel)
 		{
