@@ -77,6 +77,15 @@ namespace wenslerh
 
         }
 
+        //gets total number of rows
+        public async Task<int> CountRows()
+        {
+            var count = await database.ExecuteScalarAsync<int>("SELECT Count(*) FROM Item");
+
+            //convert task<int> to int
+            return Convert.ToInt32(count);
+        }
+
         //save the item!
         public async Task<int> SaveItemAsync(Item item)
         {
