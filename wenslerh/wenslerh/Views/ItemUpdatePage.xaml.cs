@@ -28,22 +28,24 @@ namespace wenslerh.Views
         public ItemUpdatePage(Item item)
         {
 
+            System.Diagnostics.Debug.WriteLine("updating item: " + item.Name);
+
             InitializeComponent();
             thisItem = item;
 
             Title = "Update an Item";
 
-            thisItem = new Item
-            {
-                Name = thisItem.Name,
-                Description = thisItem.Description,
-                Strength = thisItem.Strength,
+            //thisItem = new Item
+            //{
+            //    Name = item.Name,
+            //    Description = item.Description,
+            //    Strength = item.Strength,
 
-                //remember its primary key
-                ID = thisItem.ID,
-            };
+            //    //remember its primary key
+            //    ID = thisItem.ID,
+            //};
 
-            BindingContext = this;
+            BindingContext = thisItem;
         }
 
         //when you click save
