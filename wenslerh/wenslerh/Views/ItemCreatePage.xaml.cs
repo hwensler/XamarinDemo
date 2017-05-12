@@ -28,8 +28,8 @@ namespace wenslerh.Views
             newItem = new Item
             {
                 Name = "Item Name",
-                Description = "Item Description",
-                Strength = 0,
+                Attribute = "Str",
+                Value = 0,
 
                 //give it a primary key
                 ID = Guid.NewGuid().ToString(),

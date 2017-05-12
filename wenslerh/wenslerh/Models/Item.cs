@@ -12,11 +12,11 @@ namespace wenslerh.Models
         //the name of the item
         public string Name { get; set; }
 
-        //a description of the item
-		public string Description { get; set; }
+        //an attribute of the item
+		public string Attribute { get; set; }
 
         //the strength of the item
-        public int Strength { get; set; }
+        public int Value { get; set; }
 
     }
 }

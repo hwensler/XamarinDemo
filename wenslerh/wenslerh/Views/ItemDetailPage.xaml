@@ -5,10 +5,10 @@
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
         <Label Text="{Binding Item.Name}" FontSize="Large"/>
-        <Label Text="Description: " FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
-        <Label Text="Strength: " FontSize ="Medium" />
-        <Label Text="{Binding Item.Strength}" FontSize="Small"/>
+        <Label Text="Attribute: " FontSize="Medium" />
+        <Label Text="{Binding Item.Attribute}" FontSize="Small"/>
+        <Label Text="Value: " FontSize ="Medium" />
+        <Label Text="{Binding Item.Value}" FontSize="Small"/>
         <Button Text="Save" Clicked="OnSaveClicked" />
         <Button Text ="Update" Clicked="OnUpdateClicked" />
         <Button Text="Delete" Clicked="OnDeleteClicked" />

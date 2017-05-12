@@ -7,10 +7,10 @@
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Item Name" FontSize="Medium" />
             <Entry Text="{Binding newItem.Name}" FontSize="Small" />
-            <Label Text="Item Description" FontSize="Medium" />
-            <Editor Text="{Binding newItem.Description}" FontSize="Small" Margin="0" />
-            <Label Text="Item Strength" FontSize="Medium" />
-            <Editor Text="{Binding newItem.Strength}" FontSize="Small" Margin="0" />
+            <Label Text="Item Attribute" FontSize="Medium" />
+            <Editor Text="{Binding newItem.Attribute}" FontSize="Small" Margin="0" />
+            <Label Text="Item Value" FontSize="Medium" />
+            <Editor Text="{Binding newItem.Value}" FontSize="Small" Margin="0" />
             <Button Text="Save" Clicked="OnSaveClicked" />
             <Button Text="Cancel" Clicked="OnCancelClicked" />
         </StackLayout>

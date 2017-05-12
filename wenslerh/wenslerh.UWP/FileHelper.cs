@@ -15,6 +15,7 @@ namespace wenslerh.UWP
     {
         public string GetLocalFilePath(string filename)
         {
+            System.Diagnostics.Debug.WriteLine("Database located at: " + Path.Combine(ApplicationData.Current.LocalFolder.Path, filename));
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, filename);
         }
     }

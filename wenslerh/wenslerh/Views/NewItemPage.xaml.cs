@@ -17,8 +17,8 @@ namespace wenslerh.Views
             Item = new Item
             {
                 Name = "Item name",
-                Description = "This is a nice description",
-                Strength= 0
+                Attribute = "Str",
+                Value= 0
 			};
 
 			BindingContext = this;
