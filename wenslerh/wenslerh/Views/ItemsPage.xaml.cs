@@ -42,6 +42,11 @@ namespace wenslerh.Views
             //load items detail page with the selected item as the item!
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(e.SelectedItem as Item)));
         }
+
+        async void UpdateToRun(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UpdateToRunPage());
+        }
     }
 }
 
