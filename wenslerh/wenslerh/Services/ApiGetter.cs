@@ -13,8 +13,8 @@ namespace wenslerh.Services
         public async Task<List<Item>> Get()
 
         {
+            Run run;
             List<Item> items;
-
             using (var client = new HttpClient())
             {
                 //get the stuff from api
@@ -24,7 +24,8 @@ namespace wenslerh.Services
                 var itemsJson = await response.Content.ReadAsStringAsync();
 
                 //turn json string into list of items
-                items = JsonConvert.DeserializeObject<List<Item>>(itemsJson);
+                run = JsonConvert.DeserializeObject<Run>(itemsJson);
+                items = run.data;
             }
 
             return items;

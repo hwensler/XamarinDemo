@@ -25,7 +25,8 @@ namespace wenslerh.Views
             await App.Database.Initialize();
 
             listview.ItemsSource = await App.Database.GetItemsAsync();
-
+            //var apiGetter = new wenslerh.Services.ApiGetter();
+            //listview.ItemsSource = await apiGetter.Get();
         }
 
         async void OnItemAdded(object sender, EventArgs e)
