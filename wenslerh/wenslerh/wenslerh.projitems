@@ -29,6 +29,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseDataObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ApiGetter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IFileHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ItemsDatabase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MainMenu.cs" />
