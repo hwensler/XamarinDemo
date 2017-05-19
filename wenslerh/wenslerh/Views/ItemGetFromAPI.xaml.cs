@@ -10,7 +10,7 @@ namespace wenslerh.Views
     {
         public int runNumber { get; set; }
 
-        public UpdateToRunPage()
+        public ItemGetFromAPI()
         {
             InitializeComponent();
 

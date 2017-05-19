@@ -42,9 +42,9 @@ namespace wenslerh.Views
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(e.SelectedItem as Item)));
         }
 
-        async void UpdateToRun(object sender, EventArgs e)
+        async void ItemGetFromAPI(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new UpdateToRunPage());
+            await Navigation.PushAsync(new ItemGetFromAPI());
         }
     }
 }
