@@ -6,7 +6,8 @@
              x:Name="BrowseItemsPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add Item" Clicked="OnItemAdded" />
-        <ToolbarItem Text="Update from API" Clicked="ItemGetFromAPI" />
+        <ToolbarItem Text="Get from API" Clicked="ItemGetFromAPI" />
+        <ToolbarItem Text="Post to API" Clicked="ItemPostToAPI" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

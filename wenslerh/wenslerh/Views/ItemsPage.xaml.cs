@@ -46,6 +46,11 @@ namespace wenslerh.Views
         {
             await Navigation.PushAsync(new ItemGetFromAPI());
         }
+
+        async void ItemPostToAPI(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemPostToAPI());
+        }
     }
 }
 
