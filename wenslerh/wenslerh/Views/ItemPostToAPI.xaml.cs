@@ -23,13 +23,13 @@ namespace wenslerh.Views
 
 
         //create string for selected character
-        int SelectedCharacterTypeIndex;
+        public int SelectedCharacterTypeIndex { get; set; }
 
         //create int for selected character level
-        int SelectedCharacterLevel = 0;
+        public int SelectedCharacterLevel { get; set; }
 
         //create bool for random
-        Boolean SelectedRandom = false;
+        public Boolean SelectedRandom { get; set; }
 
 
         

@@ -38,8 +38,11 @@ namespace wenslerh.Services
 
         //create post
         public async Task<List<Item>> Post(int random, string CharacterType, int CharacterLevel)
-
         {
+            System.Diagnostics.Debug.WriteLine(random.ToString());
+            System.Diagnostics.Debug.WriteLine(CharacterType);
+            System.Diagnostics.Debug.WriteLine(CharacterLevel.ToString());
+
             Run run;
             List<Item> items;
             using (var client = new HttpClient())
@@ -67,8 +70,8 @@ namespace wenslerh.Services
                 {
                     item.ID = Guid.NewGuid().ToString();
                 }
+                System.Diagnostics.Debug.WriteLine(itemsJson);
             }
-
             return items;
         }
 
