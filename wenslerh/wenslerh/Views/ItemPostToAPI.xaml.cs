@@ -37,6 +37,12 @@ namespace wenslerh.Views
 		{
 			InitializeComponent ();
             BindingContext = this;
+            this.TypePicker.Items.Clear();
+            foreach (var type in CharacterTypes)
+            {
+                this.TypePicker.Items.Add(type);
+            }
+
 
         }
 
