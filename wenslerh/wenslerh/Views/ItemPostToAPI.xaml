@@ -2,4 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="wenslerh.Views.ItemPostToAPI">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="Update" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Character Type" FontSize="Medium" />
+            <Picker ItemsSource = "{Binding CharacterTypes}" SelectedIndex = "{Binding SelectedCharacterTypeIndex}"/>
+            <Label Text="Character Level" FontSize="Medium" />
+            <Editor Text="{Binding SelectedCharacterLevel}" FontSize="Small" Margin="0" />
+            <Label Text="Should items be random? Toggle on for yes. " FontSize ="Medium" />
+            <Switch IsToggled="{Binding SelectedRandom}" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

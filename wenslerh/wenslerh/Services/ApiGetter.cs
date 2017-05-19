@@ -36,6 +36,42 @@ namespace wenslerh.Services
             return items;
         }
 
+        //create post
+        public async Task<List<Item>> Post(int random, string CharacterType, int CharacterLevel)
+
+        {
+            Run run;
+            List<Item> items;
+            using (var client = new HttpClient())
+            {
+                //create the body
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("random", random.ToString()),
+                    new KeyValuePair<string, string>("charactertype", CharacterType),
+                    new KeyValuePair<string, string>("characterlevel", CharacterLevel.ToString())
+
+                });
+
+                //get the stuff from api
+                HttpResponseMessage response = await client.PostAsync("http://thursdayhomeworkpost.azurewebsites.net/api/GetItems", content);
+
+                //get a string of the results
+                var itemsJson = await response.Content.ReadAsStringAsync();
+
+                //turn json string into list of items
+                run = JsonConvert.DeserializeObject<Run>(itemsJson);
+                items = run.data;
+                // we need to add IDs to the items, since they don't get them from the API
+                foreach (Item item in items)
+                {
+                    item.ID = Guid.NewGuid().ToString();
+                }
+            }
+
+            return items;
+        }
+
         public async void UpdateDatabase(List<Item> items)
         {
             var oldItems = await App.Database.GetItemsAsync();
