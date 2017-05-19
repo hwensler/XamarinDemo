@@ -87,8 +87,8 @@
       <DependentUpon>ScorePage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\UpdateToRunPage.xaml.cs">
-      <DependentUpon>UpdateToRunPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ItemGetFromAPI.xaml.cs">
+      <DependentUpon>ItemGetFromAPI.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -144,7 +144,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\UpdateToRunPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ItemGetFromAPI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

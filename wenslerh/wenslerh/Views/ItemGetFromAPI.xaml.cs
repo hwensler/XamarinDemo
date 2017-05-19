@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace wenslerh.Views
 {
-    public partial class UpdateToRunPage : ContentPage
+    public partial class ItemGetFromAPI : ContentPage
     {
         public int runNumber { get; set; }
 
